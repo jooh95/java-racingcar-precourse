@@ -6,6 +6,10 @@ import java.util.List;
 public class RacingCars {
     private final List<RacingCar> racingCars;
 
+    public RacingCars(List<RacingCar> racingCars) {
+        this.racingCars = racingCars;
+    }
+
     public RacingCars(CarNames carNames) {
         this.racingCars = toRacingCarList(carNames);
     }

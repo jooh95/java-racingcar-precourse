@@ -3,7 +3,6 @@ package racingcar.model;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -18,18 +17,5 @@ class RacingCarTest {
 
         assertThat(racingCar.getCurrentLap().getLap()).isEqualTo(expectedLap);
         assertThat(racingCar.getMoveRecords().getRecords()).hasSize(expectedRecordSize);
-    }
-
-    static class TestMoveStrategy implements MoveStrategy {
-        private final boolean canMove;
-
-        public TestMoveStrategy(boolean canMove) {
-            this.canMove = canMove;
-        }
-
-        @Override
-        public boolean canMove() {
-            return canMove;
-        }
     }
 }
