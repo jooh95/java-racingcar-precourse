@@ -1,9 +1,8 @@
 package racingcar.view;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
+import static racingcar.model.CarNames.NAME_SPLITTER;
 
-import java.util.Arrays;
-import java.util.List;
 import racingcar.model.RacingMatch;
 import racingcar.view.dto.PlayerInputDto;
 
@@ -15,15 +14,14 @@ public class RacingMatchView {
     }
 
     public PlayerInputDto askForPlayerInput() {
-        List<String> carNames = askForCarNames();
+        String carNames = askForCarNames();
         int lap = askForLap();
         return new PlayerInputDto(carNames, lap);
     }
 
-    private List<String> askForCarNames() {
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은쉼표(,) 기준으로 구분)");
-        String inputStr = readLine();
-        return Arrays.asList(inputStr.split(","));
+    private String askForCarNames() {
+        System.out.printf("경주할 자동차 이름을 입력하세요.(이름은쉼표(%s) 기준으로 구분)\n", NAME_SPLITTER);
+        return readLine();
     }
 
     private int askForLap() {
