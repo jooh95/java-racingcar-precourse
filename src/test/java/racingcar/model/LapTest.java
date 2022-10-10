@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class LapTest {
-
     @DisplayName("lap이 1씩 증가하는지 테스트")
     @ParameterizedTest
     @CsvSource(value = {"1,2", "9,10"}, delimiter = ',')

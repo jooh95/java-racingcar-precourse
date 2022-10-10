@@ -6,9 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class CarNamesTest {
-
-    @Test
     @DisplayName("이름이 ,로 분리되는지 테스트")
+    @Test
     void name_split() {
         String input = "a,b,c";
 
