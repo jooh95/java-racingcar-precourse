@@ -2,17 +2,31 @@ package racingcar.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class RacingCarsTest {
-    @DisplayName("경주중이 아닐때 farthestLap이 0인지 테스트")
+    @DisplayName("가장 멀리간 자동차의 위치 값 구하는 로직 검증")
     @Test
     void getFarthestLap() {
-        RacingCars racingCars = new RacingCars(new CarNames("a,b,c"));
+        RacingCars testCars = arrangeRacingCars();
 
-        Lap farthestLap = racingCars.getFarthestLap();
+        Lap farthestLap = testCars.getFarthestLap();
 
-        assertThat(farthestLap.getLap()).isEqualTo(0);
+        assertThat(farthestLap.getLap()).isEqualTo(10);
+    }
+
+    private RacingCars arrangeRacingCars() {
+        List<RacingCar> racingCarList = new ArrayList<>();
+        racingCarList.add(
+            new RacingCar(new CarName("test"), new Lap(0), new TestMoveStrategy(true)));
+        racingCarList.add(
+            new RacingCar(new CarName("test2"), new Lap(10), new TestMoveStrategy(true)));
+        racingCarList.add(
+            new RacingCar(new CarName("test3"), new Lap(3), new TestMoveStrategy(true)));
+
+        return new RacingCars(racingCarList);
     }
 }

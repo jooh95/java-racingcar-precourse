@@ -8,9 +8,16 @@ public class RacingCar {
 
     public RacingCar(CarName carName, MoveStrategy moveStrategy) {
         this.carName = carName;
-        this.moveStrategy = moveStrategy;
         this.currentLap = new Lap(0);
         this.moveRecords = new MoveRecords();
+        this.moveStrategy = moveStrategy;
+    }
+
+    public RacingCar(CarName carName, Lap lap, MoveStrategy moveStrategy) {
+        this.carName = carName;
+        this.currentLap = lap;
+        this.moveRecords = new MoveRecords();
+        this.moveStrategy = moveStrategy;
     }
 
     public void raceOneLap() {
