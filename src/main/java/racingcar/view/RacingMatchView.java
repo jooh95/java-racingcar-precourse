@@ -10,10 +10,10 @@ import racingcar.model.CarNames;
 import racingcar.model.Lap;
 import racingcar.model.MoveRecord;
 import racingcar.model.MoveRecords;
+import racingcar.model.PlayerInput;
 import racingcar.model.RacingCar;
 import racingcar.model.RacingCars;
 import racingcar.model.RacingMatch;
-import racingcar.view.dto.PlayerInputDTO;
 
 public class RacingMatchView {
     private final RacingMatch racingMatch;
@@ -22,18 +22,16 @@ public class RacingMatchView {
         this.racingMatch = racingMatch;
     }
 
-    public PlayerInputDTO askForPlayerInput() {
-        String carNames = askForCarNames();
-        int lap = askForLap();
-        return new PlayerInputDTO(carNames, lap);
+    public PlayerInput askForPlayerInput() {
+        CarNames carNames = askForCarNames();
+        Lap lap = askForLap();
+        return new PlayerInput(carNames, lap);
     }
 
     public void printResult() {
         StringBuilder stringBuilder = new StringBuilder();
         Lap lap = racingMatch.getLap();
-        if (lap != null) {
-            setResultMessage(stringBuilder, lap.getLap());
-        }
+        setResultMessage(stringBuilder, lap.getLap());
 
         if (stringBuilder.length() > 0) {
             System.out.println(stringBuilder);
@@ -76,15 +74,26 @@ public class RacingMatchView {
         return stringBuilder.toString();
     }
 
-    private String askForCarNames() {
+    private CarNames askForCarNames() {
         System.out.printf("경주할 자동차 이름을 입력하세요.(이름은쉼표(%s) 기준으로 구분)\n", NAME_SPLITTER);
-        return readLine();
+        String inputStr = readLine();
+        try {
+            return new CarNames(inputStr);
+        } catch (IllegalArgumentException illegalArgumentException) {
+            System.out.println("[ERROR] 이름은 쉼표(,)를 기준으로 구분하며, 5자 이하만 가능하다.");
+            return askForCarNames();
+        }
     }
 
-    private int askForLap() {
+    private Lap askForLap() {
         System.out.println("시도할 회수는 몇회인가요?");
         String inputStr = readLine();
-        return Integer.parseInt(inputStr);
+        try {
+            return new Lap(inputStr);
+        } catch (IllegalArgumentException illegalArgumentException) {
+            System.out.println("[ERROR] 시도횟수는 숫자여야 한다.");
+            return askForLap();
+        }
     }
 
     private void setEachStepStateMessage(StringBuilder stringBuilder, int step,

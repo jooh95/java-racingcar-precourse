@@ -3,7 +3,13 @@ package racingcar.model;
 public class Lap implements Comparable<Lap> {
     private int lap;
 
+    public Lap(String lap) {
+        validate(lap);
+        this.lap = Integer.parseInt(lap);
+    }
+
     public Lap(int lap) {
+        validate(lap);
         this.lap = lap;
     }
 
@@ -23,5 +29,17 @@ public class Lap implements Comparable<Lap> {
             return -1;
         }
         return 0;
+    }
+
+    private void validate(String lap) {
+        if (!lap.matches("\\d+")) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void validate(int lap) {
+        if (lap < 0) {
+            throw new IllegalArgumentException();
+        }
     }
 }

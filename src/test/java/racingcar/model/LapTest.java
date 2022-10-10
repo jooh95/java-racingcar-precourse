@@ -1,8 +1,10 @@
 package racingcar.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -28,5 +30,11 @@ class LapTest {
         int result = lap.compareTo(lap2);
 
         assertThat(result).isEqualTo(expected);
+    }
+
+    @DisplayName("lap 숫자가 아닐 시 에러")
+    @Test
+    void validate() {
+        assertThrows(IllegalArgumentException.class, () -> new Lap("abc"));
     }
 }

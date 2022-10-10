@@ -29,11 +29,9 @@ public class RacingCars {
 
     private List<RacingCar> toRacingCarList(CarNames carNames) {
         List<RacingCar> racingCars = new ArrayList<>();
-
         for (CarName carName : carNames.getNames()) {
             racingCars.add(new RacingCar(carName, RacingCarMoveStrategy.DEFAULT));
         }
-
         return racingCars;
     }
 }
