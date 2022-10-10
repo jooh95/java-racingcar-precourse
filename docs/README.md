@@ -2,7 +2,9 @@
 - [ ] model 구현
   - [x] 자동차 이름 도메인 구현 (`CarName`, `CarNames`)
   - [x] 경주 진행횟수 도메인 구현 (`Lap`)
-  - [ ] 자동차 도메인 구현
+  - [x] 자동차 도메인 구현 (`RacingCar`, `RacingCars`)
+    - [x] 자동차 움직임 전략 도메인 구현 (`MoveStrategy`, `RacingCarMoveStrategy`)
+    - [x] 자동차 움직임 기록 도메인 구현 (`MoveRecord`, `MoveRecords`) 
   - [ ] 자동차 경주 도메인 구현
 - [ ] controller 구현
 - [ ] view 구현
