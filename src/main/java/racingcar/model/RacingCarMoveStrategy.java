@@ -10,6 +10,6 @@ public class RacingCarMoveStrategy implements MoveStrategy {
 
     @Override
     public boolean canMove() {
-        return pickNumberInRange(0, 9) > 4;
+        return pickNumberInRange(0, 9) >= 4;
     }
 }
