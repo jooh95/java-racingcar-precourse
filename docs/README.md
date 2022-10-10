@@ -8,10 +8,10 @@
   - [x] 자동차 경주 도메인 구현 (`RacingMatch`)
 - [x] controller 구현 (`RacingMatchController`)
   - [x] `PlayerInputDTO`와 model 연결
-- [ ] view 구현 (`RacingMatchView`)
+- [x] view 구현 (`RacingMatchView`)
   - [x] 사용자 입력을 관리하는 dto 객체 구현 (`PlayerInputDTO`)
   - [x] 자동차 이름과, 시도 횟수 입력 구현
-  - [ ] 경기 결과 출력 구현
+  - [x] 경기 결과 출력 구현
 - [ ] validation 구현
   - [ ] 사용자가 잘못된 입력을 하였을 때 exception 처리
   - [ ] 자동차 이름이 빈 값으로 들어올 경우 exception 처리
