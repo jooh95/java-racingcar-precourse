@@ -4,7 +4,7 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 import static racingcar.model.CarNames.NAME_SPLITTER;
 
 import racingcar.model.RacingMatch;
-import racingcar.view.dto.PlayerInputDto;
+import racingcar.view.dto.PlayerInputDTO;
 
 public class RacingMatchView {
     private final RacingMatch racingMatch;
@@ -13,10 +13,10 @@ public class RacingMatchView {
         this.racingMatch = racingMatch;
     }
 
-    public PlayerInputDto askForPlayerInput() {
+    public PlayerInputDTO askForPlayerInput() {
         String carNames = askForCarNames();
         int lap = askForLap();
-        return new PlayerInputDto(carNames, lap);
+        return new PlayerInputDTO(carNames, lap);
     }
 
     private String askForCarNames() {

@@ -1,12 +1,10 @@
 package racingcar.view.dto;
 
-import java.util.List;
-
-public class PlayerInputDto {
+public class PlayerInputDTO {
     private final String carNames;
     private final int lap;
 
-    public PlayerInputDto(String carNames, int lap) {
+    public PlayerInputDTO(String carNames, int lap) {
         this.carNames = carNames;
         this.lap = lap;
     }

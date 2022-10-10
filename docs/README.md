@@ -1,5 +1,5 @@
 ## 기능목록
-- [ ] model 구현
+- [x] model 구현
   - [x] 자동차 이름 도메인 구현 (`CarName`, `CarNames`)
   - [x] 경주 진행횟수 도메인 구현 (`Lap`)
   - [x] 자동차 도메인 구현 (`RacingCar`, `RacingCars`)
@@ -7,7 +7,8 @@
     - [x] 자동차 움직임 기록 도메인 구현 (`MoveRecord`, `MoveRecords`) 
   - [x] 자동차 경주 도메인 구현 (`RacingMatch`)
 - [ ] controller 구현
-- [ ] view 구현
+- [ ] view 구현 (`RacingMatchView`)
+  - [x] 사용자 입력을 관리하는 dto 객체 구현 (`PlayerInputDTO`)
   - [x] 자동차 이름과, 시도 횟수 입력 구현
   - [ ] 경기 결과 출력 구현
 - [ ] validation 구현
