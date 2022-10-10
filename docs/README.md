@@ -6,7 +6,8 @@
     - [x] 자동차 움직임 전략 도메인 구현 (`MoveStrategy`, `RacingCarMoveStrategy`)
     - [x] 자동차 움직임 기록 도메인 구현 (`MoveRecord`, `MoveRecords`) 
   - [x] 자동차 경주 도메인 구현 (`RacingMatch`)
-- [ ] controller 구현
+- [x] controller 구현 (`RacingMatchController`)
+  - [x] `PlayerInputDTO`와 model 연결
 - [ ] view 구현 (`RacingMatchView`)
   - [x] 사용자 입력을 관리하는 dto 객체 구현 (`PlayerInputDTO`)
   - [x] 자동차 이름과, 시도 횟수 입력 구현
