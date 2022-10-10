@@ -21,11 +21,9 @@ class RacingCarsTest {
     private RacingCars arrangeRacingCars() {
         List<RacingCar> racingCarList = new ArrayList<>();
         racingCarList.add(
-            new RacingCar(new CarName("test"), new Lap(0), new TestMoveStrategy(true)));
+            new RacingCar(new CarName("test"), new Lap(10), new TestMoveStrategy(true)));
         racingCarList.add(
-            new RacingCar(new CarName("test2"), new Lap(10), new TestMoveStrategy(true)));
-        racingCarList.add(
-            new RacingCar(new CarName("test3"), new Lap(3), new TestMoveStrategy(true)));
+            new RacingCar(new CarName("test2"), new Lap(2), new TestMoveStrategy(true)));
 
         return new RacingCars(racingCarList);
     }
